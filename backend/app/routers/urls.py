@@ -1,5 +1,3 @@
-import logging
-
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import RedirectResponse
 
@@ -9,9 +7,9 @@ from app.models.models import ShortenRequest, ShortenResponse
 
 from app.services import hashing
 from app.services.database import DBClient
+from app.utils.logger import logger
 
 
-logger = logging.getLogger(__name__)
 read_cache = CacheClient()
 db = DBClient()
 
